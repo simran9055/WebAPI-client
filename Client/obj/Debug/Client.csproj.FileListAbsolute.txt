@@ -1,0 +1,15 @@
+C:\Users\ssingh\Documents\Visual Studio 2015\Projects\Client\Client\bin\Debug\Client.exe.config
+C:\Users\ssingh\Documents\Visual Studio 2015\Projects\Client\Client\bin\Debug\Client.exe
+C:\Users\ssingh\Documents\Visual Studio 2015\Projects\Client\Client\bin\Debug\Client.pdb
+C:\Users\ssingh\Documents\Visual Studio 2015\Projects\Client\Client\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ssingh\Documents\Visual Studio 2015\Projects\Client\Client\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\ssingh\Documents\Visual Studio 2015\Projects\Client\Client\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\ssingh\Documents\Visual Studio 2015\Projects\Client\Client\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\ssingh\Documents\Visual Studio 2015\Projects\Client\Client\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ssingh\Documents\Visual Studio 2015\Projects\Client\Client\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\ssingh\Documents\Visual Studio 2015\Projects\Client\Client\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\ssingh\Documents\Visual Studio 2015\Projects\Client\Client\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\ssingh\Documents\Visual Studio 2015\Projects\Client\Client\obj\Debug\Client.csproj.App.config
+C:\Users\ssingh\Documents\Visual Studio 2015\Projects\Client\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\ssingh\Documents\Visual Studio 2015\Projects\Client\Client\obj\Debug\Client.exe
+C:\Users\ssingh\Documents\Visual Studio 2015\Projects\Client\Client\obj\Debug\Client.pdb
