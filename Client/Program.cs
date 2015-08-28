@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -13,8 +14,11 @@ namespace Client
 {
     class Program
     {
-        private static string POST = "http://localhost:59822/api/login";
-        private static string GET = "http://localhost:59822/api/Messages";
+        private static string POST = "http://localhost:59822/api/v1/login";
+        private static string POSTCreateReservation = "http://localhost:59822/api/v1/systems/8008800003/createCallReservation";
+
+        private static string GETMessages =
+            "http://localhost:59822/api/v1/systems/8008800003/mailboxes/80/folders/New/messages?SortAsc=true";
 
         static void Main()
         {
@@ -25,7 +29,7 @@ namespace Client
             {
                 var response = httpClient.PostAsJsonAsync(
                     POST,
-                    new {Username = "User2", Password = "asdf" },
+                    new {Username = "@freedomvoice.com", Password = "" },
                     CancellationToken.None
                 ).Result;
                 response.EnsureSuccessStatusCode();
@@ -33,17 +37,18 @@ namespace Client
                 Console.WriteLine("1: " + response.Headers.GetValues("Set-Cookie").FirstOrDefault());
                 if (success)
                 {
-                    HttpRequestMessage request = new HttpRequestMessage();
-                    request.Method = HttpMethod.Get;
-                    request.RequestUri = new Uri(GET);
-                    
-                    if (response.IsSuccessStatusCode)
-                    {
-                        Console.WriteLine(request.Headers);
-                    }
-                    var secret = httpClient.GetStringAsync(GET);
-                    var h= httpClient.GetAsync(GET);
-                    Console.WriteLine(secret.Result);
+                    var response2 = httpClient.PostAsJsonAsync(
+                         POSTCreateReservation,
+                        new {
+                            ExpectedCallerIdNumber = "7605769573",
+                            DestinationPhoneNumber = "7608349196",
+                            PresentationPhoneNumber = 8008800003
+                        },
+                        CancellationToken.None
+                        );
+                    Stream receiveStream = response2.Result.Content.ReadAsStreamAsync().Result;
+                    StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+                    Console.WriteLine(readStream.ReadToEnd());
                 }
                 else
                 {
